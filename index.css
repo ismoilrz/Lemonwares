@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin-inline: auto;
+}
+
+.contentView {
+    display: none;
+    transition: 0.3s;
+}
+
+.contentView.active {
+    display: flex;
+}
+
+.viewBtn.active {
+    color: #B00000;
+    border-color: #B00000;
+}
