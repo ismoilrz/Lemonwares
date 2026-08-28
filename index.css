@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+button {
+    cursor: pointer;
+}
+
 .container {
     width: 100%;
     max-width: 1300px;
@@ -9,6 +13,13 @@
 .contentView {
     display: none;
     transition: 0.3s;
+    animation: topPulse 0.3s ease-out;
+}
+
+@keyframes topPulse {
+    0%{transform: translateY(-50px); opacity: 0.5;}
+    20%{opacity: 0;}
+    100%{transform: translate(0);}
 }
 
 .contentView.active {
@@ -18,4 +29,59 @@
 .viewBtn.active {
     color: #B00000;
     border-color: #B00000;
+}
+
+.chackCircle{
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 100%;
+    transform: translateX(46px);
+    transition: 0.2s ease-out;
+}
+
+/* ////////////////////// started ////////////////////// */
+
+.checkBox {
+    transition: 0.2s ease-out;
+}
+
+.checkBox.active {
+    background-color: #B00000;
+}
+
+.checkBox.active .chackCircle {
+    transform: translateX(0);
+}
+
+.startedCon {
+    display: none;
+}
+
+.startedCon.active {
+    display: flex;
+    gap: 100px;
+}
+
+.startedBtn {
+    transition: 0.3s ease-out;
+}
+
+.startedBtn.active {
+    border-color: #B00000;
+}
+
+#basicCon { animation: str 0.3s ease-out; };
+#premiumCon { animation: str2 0.3s ease-out; };
+
+@keyframes str {
+    0%{transform: translateX(-50px); opacity: 0.5;}
+    20%{opacity: 0;}
+    100%{transform: translate(0);}
+}
+
+@keyframes str2 {
+    0%{transform: translateX(50px); opacity: 0.1;}
+    20%{opacity: 0;}
+    100%{transform: translate(0);}
 }
