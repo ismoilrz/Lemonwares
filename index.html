@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container pt-10">
-        <header class="w-full flex justify-between">
+    <div class="pt-10">
+        <header class="container w-full flex justify-between">
             <div class="flex w-[55%] justify-between items-center">
                 <div class="flex items-center w-[35%] justify-between">
                     <div class="w-[90px] h-15"><img class="w-full h-full" src="./assets/Logo.png" alt=""></div>
@@ -29,7 +29,7 @@
             </div>
         </header>
 
-        <section class="py-20">
+        <section class="container py-20">
             <div class="flex items-center">
                 <button data-view="view-1" class="viewBtn active text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">Hosting</button>
                 <button data-view="view-2" class="viewBtn text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">Domain</button>
@@ -95,7 +95,7 @@
             </div>
         </section>
 
-        <section class="w-full flex flex-col">
+        <section class="container w-full flex flex-col">
             <div class="flex flex-col gap-24">
                 <div class="flex items-center">
                     <div class="w-1/2 flex flex-col gap-5">
@@ -115,7 +115,7 @@
             </div>
         </section>
 
-        <section class="pt-[100px] w-full flex flex-col items-center">
+        <section class="container pt-[100px] w-full flex flex-col items-center">
             <h2 class="text-[50px] font-bold max-w-1/2 text-center text-black leading-15">Ready to get started with Lemon Wares?</h2>
             <p class="text-[25px] text-black mt-10">Choose the package that suits you</p>
             <div class="flex flex-col items-center">
@@ -125,7 +125,7 @@
                     <span chackcircle="false" class="chackCircle"></span>
                 </button>
                 <span class="text-[25px]">Yearly</span>
-                <span class="flex items-center justify-center w-22 h-6 bg-[#FFE87A] rounded-[8px] text-black text-[10px] font-[500]">20% discount</span>
+                <span class="flex items-center justify-center w-22 h-6 bg-[#FFE87A] rounded-[2px] text-black text-[10px] font-[500]">20% discount</span>
             </div>
             <div class="flex items-center">
                 <button startedTab="basicCon" class="startedBtn active py-[6px] w-111 bg-transparent border-b-4 border-solid border-[#c4c4c4] mb-[85px] text-[30px] font-[600] text-black">Bacik</button>
@@ -138,26 +138,26 @@
             </div>
         </section>
 
-        <section class="flex justify-center w-full pt-[105px]">
-            <div class="w-1/2 flex flex-col items-end mt-14">
-                <h2 class="text-[48px]">Real Stories from Real Customers</h2>
-                <p>Get inspired by these stories.</p>
-                <div>
-                    <img src="./assets//customersLogo1.svg" alt="logo">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing 
-                        elit ut aliquam, purus sit amet luctus venenatis, 
-                        lectus magna fringilla urna, porttitor rhoncus dolor 
-                        purus non enim praesent elem
-                    </p>
-                    <strong>Floyd Miles</strong>
-                    <span>Vice President, CLI</span>
-                </div>
+       <section class="w-full flex gap-[30px]">
+           <div class="w-full flex flex-col items-end">
+              <div class="w-[55%]">
+                <h2 class="text-[48px] font-bold">Real Stories from Real Customers</h2>
+                <p class="text-[18px]">Get inspired by these stories.</p>
+              </div>
+              <div class="w-[50%] border border-solid border-black">
+                <img src="./assets/customersLogo2.svg" alt="">
+                  <p class="max-w-[80%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elem</p>
+                  <strong>Floyd Miles</strong>
+                  <p>Vice President, CLI</p>
+              </div>
+           </div>
+           <div class="customersCol2 w-full">
+            <div class="w-[50%] border border-solid border-black">
+                <img src="./assets/customersLogo2.svg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, corporis? Nesciunt repudiandae accusamus ratione numquam? Molestias perferendis ad, eligendi, unde numquam vero, quae culpa architecto id sequi aliquid cumque. Dignissimos alias velit possimus maxime sit quisquam ex, hic incidunt facilis iste laborum illum ullam eum numquam assumenda. Fugit, quaerat eos!</p>
             </div>
-            <div class="w-1/2">
-
-            </div>
-        </section>
+           </div>
+       </section>
 
     </div>
 
@@ -165,3 +165,4 @@
     <script src="./utils/localData.js"></script>
 </body>
 </html>
+
