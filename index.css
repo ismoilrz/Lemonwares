@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+
 button {
     cursor: pointer;
 }
@@ -17,9 +19,9 @@ button {
 }
 
 @keyframes topPulse {
-    0%{transform: translateY(-50px); opacity: 0.5;}
-    20%{opacity: 0;}
-    100%{transform: translate(0);}
+    0% { transform: translateY(-50px); opacity: 0.5; }
+    20% { opacity: 0; }
+    100% { transform: translate(0); }
 }
 
 .contentView.active {
@@ -31,19 +33,17 @@ button {
     border-color: #B00000;
 }
 
-.chackCircle{
-    width: 30px;
-    height: 30px;
-    background: #fff;
-    border-radius: 100%;
-    transform: translateX(46px);
-    transition: 0.2s ease-out;
+.checkBox {
+    transition: background-color 0.2s ease-out;
 }
 
-/* ////////////////////// started ////////////////////// */
-
-.checkBox {
-    transition: 0.2s ease-out;
+.chackCircle {
+    width: 34px;
+    height: 34px;
+    background: #fff;
+    border-radius: 100%;
+    transform: translateX(0);
+    transition: transform 0.2s ease-out;
 }
 
 .checkBox.active {
@@ -51,9 +51,10 @@ button {
 }
 
 .checkBox.active .chackCircle {
-    transform: translateX(0);
+    transform: translateX(43px);
 }
 
+/* Started Section */
 .startedCon {
     display: none;
 }
@@ -71,20 +72,21 @@ button {
     border-color: #B00000;
 }
 
-#basicCon { animation: str 0.3s ease-out; };
-#premiumCon { animation: str2 0.3s ease-out; };
+#basicCon { animation: str 0.3s ease-out; }
+#premiumCon { animation: str2 0.3s ease-out; }
 
 @keyframes str {
-    0%{transform: translateX(-50px); opacity: 0.5;}
-    20%{opacity: 0;}
-    100%{transform: translate(0);}
+    0% { transform: translateX(-50px); opacity: 0.5; }
+    20% { opacity: 0; }
+    100% { transform: translate(0); }
 }
 
 @keyframes str2 {
-    0%{transform: translateX(50px); opacity: 0.1;}
-    20%{opacity: 0;}
-    100%{transform: translate(0);}
+    0% { transform: translateX(50px); opacity: 0.1; }
+    20% { opacity: 0; }
+    100% { transform: translate(0); }
 }
 
-/* /////////////////////////// customers///////////////////////////// */
-
+.cusq {
+    opacity: 0.4;
+}

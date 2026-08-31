@@ -10,9 +10,7 @@ const startedCon = document.querySelectorAll('.startedCon')
 const basicCon = document.getElementById('basicCon')
 const premiumCon = document.getElementById('premiumCon')
 
-
-
-
+// Navigation Tabs
 btns.forEach(btn => {
     btn.addEventListener('click', () => {
         btns.forEach(btn => btn.classList.remove('active'))
@@ -25,39 +23,14 @@ btns.forEach(btn => {
     })
 })
 
-// ///////////////////// Hosting data 
-
+// Hosting Data
 const HostingLogos = [
-    {
-        id: 1,
-        url: './assets/webHostingLogo1.svg',
-        name: 'cPanel',
-    },
-    {
-        id: 2,
-        url: './assets/webHostingLogo2.svg',
-        name: 'immunify 360',
-    },
-    {
-        id: 3,
-        url: './assets/webHostingLogo3.svg',
-        name: 'LITESPEED',
-    },
-    {
-        id: 4,
-        url: './assets/webHostingLogo4.svg',
-        name: 'Softaculous',
-    },
-    {
-        id: 5,
-        url: './assets/webHostingLogo5.svg',
-        name: 'WordPress',
-    },
-    {
-        id: 6,
-        url: './assets/webHostingLogo6.svg',
-        name: 'CLOUDFLARE',
-    }
+    { id: 1, url: './assets/webHostingLogo1.svg', name: 'cPanel' },
+    { id: 2, url: './assets/webHostingLogo2.svg', name: 'immunify 360' },
+    { id: 3, url: './assets/webHostingLogo3.svg', name: 'LITESPEED' },
+    { id: 4, url: './assets/webHostingLogo4.svg', name: 'Softaculous' },
+    { id: 5, url: './assets/webHostingLogo5.svg', name: 'WordPress' },
+    { id: 6, url: './assets/webHostingLogo6.svg', name: 'CLOUDFLARE' }
 ]
 
 const HostingBuild = [
@@ -72,7 +45,8 @@ const HostingBuild = [
         url: './assets/hostingBuild2.png',
         title: 'Blazing Fast Web Hosting',
         description: 'Downtime not only costs you lost visitors but also damages your reputation and search engine rankings.'
-    }, {
+    },
+    {
         id: 3,
         url: './assets/hostingBuild3.png',
         title: 'Free SSL Certificates',
@@ -87,32 +61,25 @@ const HostingBuild = [
 ]
 
 hostingLogos.innerHTML = HostingLogos.map(logos => 
-    `<a href="#" class="w-[26%]" key=${logos.id}>
-    <img class="w-full h-full object-contain" src="${logos.url}" alt="${logos.name}" />
+    `<a href="#" class="w-[26%]" key="${logos.id}">
+        <img class="w-full h-full object-contain" src="${logos.url}" alt="${logos.name}" />
     </a>`
 ).join('')
 
 hostingBuild.innerHTML = HostingBuild.map(build => 
     `<div class="w-1/5 flex flex-col items-center gap-3" key="${build.id}">
-    <img class="w-25" h-25 src="${build.url}" />
-    <h5 class="text-[20px] font-bold text-black">${build.title}</h5>
-    <p class="text-center text-[12px] text-black">${build.description}<p/>
+        <img class="w-25 h-25" src="${build.url}" />
+        <h5 class="text-[20px] font-bold text-black">${build.title}</h5>
+        <p class="text-center text-[12px] text-black">${build.description}</p>
     </div>`
 ).join('')
-
-chack.addEventListener('click', () => {
-    const isActive = chack.classList.toggle('active')
-    chack.setAttribute('chackcircle', isActive)
-})
-
-// ///////////////////// Started data 
 
 const StartedBasic = [
     {
         id: 1,
         title: 'Starter',
         description: 'with all your customers via all conversation channels in one central dashboard.',
-        price: '2.80',
+        price: 2.80,
         advance: {
             ssd: '2GB SSD',
             bandwidth: '10GB Bandwidth',
@@ -123,13 +90,13 @@ const StartedBasic = [
             website: '2 Websites',
             ssl: 'Free SSL',
             softaculous: 'Softaculous'
-        },
+        }
     },
     {
         id: 2,
         title: 'Standart',
         description: 'with all your customers via all conversation channels in one central dashboard.',
-        price: '4.20',
+        price: 4.20,
         advance: {
             ssd: '5GB SSD',
             bandwidth: '25GB Bandwidth',
@@ -140,13 +107,13 @@ const StartedBasic = [
             website: '5 Websites',
             ssl: 'Free SSL',
             softaculous: 'Softaculous'
-        },
+        }
     },
     {
         id: 3,
         title: 'Suprem',
         description: 'with all your customers via all conversation channels in one central dashboard.',
-        price: '7.00',
+        price: 7.00,
         advance: {
             ssd: '15GB SSD',
             bandwidth: '60GB Bandwidth',
@@ -157,8 +124,8 @@ const StartedBasic = [
             website: '10 Websites',
             ssl: 'Free SSL',
             softaculous: 'Softaculous'
-        },
-    },
+        }
+    }
 ]
 
 const StartedPremium = [
@@ -166,7 +133,7 @@ const StartedPremium = [
         id: 1,
         title: 'Pro',
         description: 'with all your customers via all conversation channels in one central dashboard.',
-        price: '20.00',
+        price: 20.00,
         advance: {
             ssd: '50GB SSD',
             bandwidth: '200GB Bandwidth',
@@ -176,14 +143,14 @@ const StartedPremium = [
             parked: '25 Parked Domain',
             website: '30 Websites',
             ssl: 'Free SSL',
-            softaculous: 'Softaculous',
+            softaculous: 'Softaculous'
         }
     },
     {
         id: 2,
         title: 'Plus',
         description: 'with all your customers via all conversation channels in one central dashboard.',
-        price: '50.00',
+        price: 50.00,
         advance: {
             ssd: '130GB SSD',
             bandwidth: '500GB Bandwidth',
@@ -193,13 +160,78 @@ const StartedPremium = [
             parked: '65 Parked Domain',
             website: '80 Websites',
             ssl: 'Free SSL',
-            softaculous: 'Softaculous',
+            softaculous: 'Softaculous'
         }
-    },
+    }
 ]
 
+let isYearly = false
 
-// ///////////////////////// started
+function RenderPlans() {
+    const calculatePrice = (monthlyPrice) => {
+        if (isYearly) {
+            const fullYearPrice = monthlyPrice * 12
+            const discountedYearlyPrice = fullYearPrice * 0.8
+            return discountedYearlyPrice.toFixed(2)
+        }
+        return monthlyPrice.toFixed(2)
+    }
+
+    basicCon.innerHTML = StartedBasic.map(strt => 
+        `<div key="${strt.id}" class="w-[300px] px-[30px] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px]">
+            <h5 class="text-[28px] font-[600]">${strt.title}</h5>
+            <p class="max-w-[85%] mt-1 mb-3 text-[12px]">${strt.description}</p>
+            <strong class="text-[42px] font-bold">$${calculatePrice(strt.price)}</strong>
+            <p class="text-[12px]">${isYearly ? 'Per year (20% discount)' : 'Per month'}</p>
+            <button class="w-full h-[50px] border-2 border-solid border-black mx-auto rounded-[12px] text-[14px] font-medium my-[35px] hover:bg-black hover:text-white duration-300">
+                Choose this plan
+            </button>
+            <div class="flex flex-col gap-[15px]">
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.ssd}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.bandwidth}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.accounts}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.database}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.subdomains}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.parked}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.website}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.ssl}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.softaculous}</span></div>
+            </div>
+        </div>`
+    ).join('')
+
+    premiumCon.innerHTML = StartedPremium.map(pr => 
+        `<div key="${pr.id}" class="w-[300px] px-[30px] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px]">
+            <h5 class="text-[28px] font-[600]">${pr.title}</h5>
+            <p class="max-w-[85%] mt-1 mb-3 text-[12px]">${pr.description}</p>
+            <strong class="text-[42px] font-bold">$${calculatePrice(pr.price)}</strong>
+            <p class="text-[12px]">${isYearly ? 'Per year(20% discount)' : 'Per month'}</p>
+            <button class="w-full h-[50px] border-2 border-solid border-black mx-auto rounded-[12px] text-[14px] font-medium my-[35px] hover:bg-black hover:text-white duration-300">
+                Choose this plan
+            </button>
+            <div class="flex flex-col gap-[15px]">
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.ssd}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.bandwidth}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.accounts}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.database}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.subdomains}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.parked}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.website}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.ssl}</span></div>
+                <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.softaculous}</span></div>
+            </div>
+        </div>`
+    ).join('')
+}
+
+chack.addEventListener('click', () => {
+    isYearly = chack.classList.toggle('active')
+    const circle = chack.querySelector('.chackCircle')
+    if (circle) {
+        circle.setAttribute('chackcircle', isYearly)
+    }
+    RenderPlans()
+})
 
 startedBtn.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -213,51 +245,4 @@ startedBtn.forEach(btn => {
     })
 })
 
-
-
-basicCon.innerHTML = StartedBasic.map(strt => 
-    `<div key="${strt.id}" class="w-[300px] px-[30px] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px]">
-        <h5 class="text-[28px] font-[600]">${strt.title}</h5>
-        <p class="max-w-[85%] mt-1 mb-3 text-[12px]">${strt.description}</p>
-        <strong class="text-[42px] font-bold">$${strt.price}</strong>
-        <p class="text-[12px]">Per month</p>
-        <button class="w-full h-[50px] border-2 border-solid border-black mx-auto rounded-[12px] text-[14px] font-medium my-[35px]">
-            Choose this plan
-        </button>
-        <div class="flex flex-col gap-[15px]">
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.ssd}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.bandwidth}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.accounts}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.database}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.subdomains}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.parked}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.website}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.ssl}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.softaculous}</span></div>
-        </div>
-    </div>`
-).join('')
-
-
-premiumCon.innerHTML = StartedPremium.map(pr => 
-       `<div key="${pr.id}" class="w-[300px] px-[30px] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px]">
-        <h5 class="text-[28px] font-[600]">${pr.title}</h5>
-        <p class="max-w-[85%] mt-1 mb-3 text-[12px]">${pr.description}</p>
-        <strong class="text-[42px] font-bold">$${pr.price}</strong>
-        <p class="text-[12px]">Per month</p>
-        <button class="w-full h-[50px] border-2 border-solid border-black mx-auto rounded-[12px] text-[14px] font-medium my-[35px]">
-            Choose this plan
-        </button>
-        <div class="flex flex-col gap-[15px]">
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.ssd}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.bandwidth}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.accounts}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.database}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.subdomains}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.parked}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.website}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.ssl}</span></div>
-            <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.softaculous}</span></div>
-        </div>
-    </div>`
-).join('')
+RenderPlans()

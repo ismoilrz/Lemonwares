@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Document</title>
 </head>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <body>
     <div class="pt-10">
-        <header class="container w-full flex justify-between">
-            <div class="flex w-[55%] justify-between items-center">
-                <div class="flex items-center w-[35%] justify-between">
+        <header class="container w-full flex justify-evenly">
+            <div class="flex w-[55%] justify-between items-center max-md:w-[60%]">
+                <div class="flex items-center w-[35%] justify-between max-md:w-[50%]">
                     <div class="w-[90px] h-15"><img class="w-full h-full" src="./assets/Logo.png" alt=""></div>
                     <a class="text-[15px] font-semibold border-b-2 border-solid border-transparent duration-300 hover:border-[#B00000]" href="">Our Services</a>
                 </div>
@@ -28,141 +30,237 @@
                 </div>
             </div>
         </header>
-
-        <section class="container py-20">
-            <div class="flex items-center">
-                <button data-view="view-1" class="viewBtn active text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">Hosting</button>
-                <button data-view="view-2" class="viewBtn text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">Domain</button>
-                <button data-view="view-3" class="viewBtn text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">SEO</button>
-                <button data-view="view-4" class="viewBtn text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">Email</button>
-            </div>
-            <div class="w-full">
-                <div id="view-1" class="contentView active w-full items-center justify-between ">
-                    <div class="w-[50%]">
-                        <h2 class="text-[64px] font-bold max-w-[80%] leading-[78px]">Premium Web Hosting for Your Website</h2>
-                        <p class="text-[16px] text-[#808080] max-w-[46%] pt-[30px] pb-[60px]">Blazing fast web hosting for individuals and businesses of all sizes backed by 24x7x365 Support.</p>
-                        <div class="flex gap-6">
-                            <button class="w-40 h-12 rounded-[8px] bg-[#B00000] shadow-[1px_1px_30px] shadow-[#B0000064] text-white duration-300 hover:shadow-none hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Create an Account</button>
-                            <button class="w-40 h-12 rounded-[8px] bg-[#B00000] shadow-[1px_1px_30px] shadow-[#b0000064] text-white duration-300 hover:shadow-none hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Choose your plan</button>
+            <main>
+                <section class="container py-20 max-md:py-15">
+                        <div class="flex items-center max-md:w-full max-md:flex max-md:justify-center">
+                            <button data-view="view-1" class="viewBtn active text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">Hosting</button>
+                            <button data-view="view-2" class="viewBtn text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">Domain</button>
+                            <button data-view="view-3" class="viewBtn text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">SEO</button>
+                            <button data-view="view-4" class="viewBtn text-[15px] font-semibold text-[#D6D4D4E0] px-4 border-b-2 border-solid border-[#D6D4D4E0] duration-300">Email</button>
+                        </div>
+                        <div class="w-full max-md:flex max-md:justify-center">
+                            <div id="view-1" class="contentView active w-full items-center justify-between ">
+                                <div class="w-[50%] max-md:w-full max-md:flex max-md:flex-col max-md:mt-8 max-md:items-center">
+                                    <h2 class="text-[64px] max-md:text-[70px] font-bold max-w-[80%] leading-[78px] max-md:text-center">Premium Web Hosting for Your Website</h2>
+                                    <p class="text-[16px] text-[#808080] max-w-[46%] pt-[30px] pb-[60px] max-md:pb-[30px] max-md:text-center">Blazing fast web hosting for individuals and businesses of all sizes backed by 24x7x365 Support.</p>
+                                    <div class="flex gap-6">
+                                        <button class="w-40 h-12 rounded-[8px] bg-[#B00000] shadow-[1px_1px_30px] shadow-[#B0000064] text-white duration-300 hover:shadow-none hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Create an Account</button>
+                                        <button class="w-40 h-12 rounded-[8px] bg-[#B00000] shadow-[1px_1px_30px] shadow-[#b0000064] text-white duration-300 hover:shadow-none hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Choose your plan</button>
+                                    </div>
+                            </div>
+                            <div class="w-[43%] h-[504px] max-md:hidden">
+                                <img class="w-full h-full" src="./assets/topContent.png" alt="">
+                            </div>
+                        </div>
+                        
+                        <div id="view-2" class="contentView w-full items-center justify-between">
+                            <div class="w-[50%]">
+                                <h2 class="text-[64px] font-bold max-w-[80%] leading-[78px]">Premium Web Domain for Your Website</h2>
+                                <p class="text-[16px] text-[#808080] max-w-[46%] pt-[30px] pb-[60px]">Blazing fast web domain for individuals and businesses of all sizes backed by 24x7x365 Support.</p>
+                                <div class="flex gap-6">
+                                    <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Create an Account</button>
+                                    <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Choose your plan</button>
+                                </div>
+                            </div>
+                            <div class="w-[43%] h-[504px]">
+                                <img class="w-full h-full" src="./assets/topContent.png" alt="">
+                            </div>
+                        </div>
+                        
+                        <div id="view-3" class="contentView w-full items-center justify-between ">
+                            <div class="w-[50%]">
+                                <h2 class="text-[64px] font-bold max-w-[80%] leading-[78px]">Premium Web SEO for Your Website</h2>
+                                <p class="text-[16px] text-[#808080] max-w-[46%] pt-[30px] pb-[60px]">Blazing fast web seo for individuals and businesses of all sizes backed by 24x7x365 Support.</p>
+                                <div class="flex gap-6">
+                                    <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Create an Account</button>
+                                    <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Choose your plan</button>
+                                </div>
+                            </div>
+                            <div class="w-[43%] h-[504px]">
+                                <img class="w-full h-full" src="./assets/topContent.png" alt="">
+                            </div>
+                        </div>
+                        
+                        <div id="view-4" class="contentView w-full items-center justify-between ">
+                            <div class="w-[50%]">
+                                <h2 class="text-[64px] font-bold max-w-[80%] leading-[78px]">Premium Web Email for Your Website</h2>
+                                <p class="text-[16px] text-[#808080] max-w-[46%] pt-[30px] pb-[60px]">Blazing fast web email for individuals and businesses of all sizes backed by 24x7x365 Support.</p>
+                                <div class="flex gap-6">
+                                    <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Create an Account</button>
+                                    <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Choose your plan</button>
+                                </div>
+                            </div>
+                            <div class="w-[43%] h-[504px]">
+                                <img class="w-full h-full" src="./assets/topContent.png" alt="">
+                            </div>
                         </div>
                     </div>
-                    <div class="w-[43%] h-[504px]">
-                        <img class="w-full h-full" src="./assets/topContent.png" alt="">
+                </section>
+                
+                <section data-aos="fade-up" class="container w-full flex flex-col">
+                    <div class="flex flex-col gap-24">
+                        <div class="flex items-center">
+                            <div class="w-1/2 flex flex-col gap-5">
+                                <h4 class="text-[48px] font-bold text-black">True Cloud Web  Hosting</h4>
+                                <p class="text-[18px] leading-8 max-w-[85%] text-black">
+                                    True Cloud Web Hosting All of the hosting packages
+                                    we offer are deployed instantly on our SSD powered 
+                                    cloud. We don’t use dedicated servers that operate 
+                                    on single pieces of hardware. Our entire infrastructure 
+                                    is built to be reliable, secure, and scalable.
+                                </p>
+                            </div>
+                            <div id="hostingLogos" class="w-1/2 flex flex-wrap justify-between gap-10 items-center"></div>
+                        </div>
+                        
+                        <div data-aos="fade-up" id="hostingBuild" class="flex justify-between"></div>
+                    </div>
+                </section>
+                
+                <section data-aos="fade-up" class="container pt-[100px] w-full flex flex-col items-center">
+                    <h2 class="text-[50px] font-bold max-w-1/2 text-center text-black leading-15">Ready to get started with Lemon Wares?</h2>
+                    <p class="text-[25px] text-black mt-10">Choose the package that suits you</p>
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center gap-[25px] pt-[57px] pb-[70px]">                
+                            <span class="text-[25px]">Monthly</span>
+                        <button id="chackbox" class="checkBox w-[93px] h-[50px] bg-[#0005] rounded-full flex items-center px-[8px]">
+                            <span chackcircle="false" class="chackCircle"></span>
+                        </button>
+                        <span class="text-[25px]">Yearly</span>
+                        <span class="flex items-center justify-center w-22 h-6 bg-[#FFE87A] rounded-[8px] text-black text-[10px] font-[500]">20% discount</span>
+                    </div>
+                    <div class="flex items-center">
+                        <button startedTab="basicCon" class="startedBtn active py-[6px] w-111 bg-transparent border-b-4 border-solid border-[#c4c4c4] mb-[85px] text-[30px] font-[600] text-black max-md:w-[200px]">Bacik</button>
+                        <button startedTab="premiumCon" class="startedBtn py-[6px] w-111 bg-transparent border-b-4 border-solid border-[#c4c4c4] mb-[85px] text-[30px] font-[600] text-black max-md:w-[200px]">Premium</button>
+                    </div>
+                    <div>
+                        <div data-aos="fade-up" id="basicCon" class="startedCon active max-md:flex max-md:flex-col"></div>
+                        <div data-aos="fade-up" id="premiumCon" class="startedCon"></div>
+                    </div>
+                    </div>
+                </section>
+                
+                <section class="container pt-24 w-full relative">
+                    <img class="cusq absolute top-[11%] left-[8%] z-[-1]" src="./assets/“.jpg" alt="">
+                    <div class="flex gap-[30px]">
+                        <div class="w-1/2 flex flex-col items-end gap-6 mt-[56px]">
+                            <div class="w-[450px]">
+                                <h2 class="text-[#18191F] text-[48px] font-bold leading-[64px]">Real Stories from Real Customers</h2>
+                                <p class="text-[18px] text-[#18191F]">Get inspired by these stories.</p>
+                            </div>
+                            <div data-aos="flip-left" class="shadow-[5px_10px_10px_5px_#29292A12] pl-16 pr-8 pt-10 pb-24 relative rounded-[8px]">
+                                <img src="./assets//customersLogo2.svg" alt="">
+                                <!-- <div class="flex items-start gap-3"> -->
+                                    <p class="py-6 leading-8 max-w-[230px]">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut 
+                                    aliquam, purus sit amet luctus venenatis, lectus magna fringilla 
+                                    urna, porttitor rhoncus dolor purus non enim praesent elem
+                                </p>
+                                <img class="absolute top-[25%] left-8" src="./assets/Quote Mark.svg" alt="">
+                            <!-- </div> -->
+                            <strong class="block text-[#18191F] text-[18px]">Floyd Miles</strong>
+                            <span class="text-[14px] font-[500] text-[#969BAB]">Vice President, CLI</span>
+                        </div>
+                    </div>
+                <div class="flex flex-col gap-8 w-1/2 mt-[104px]">
+                    <div data-aos="flip-right" class="w-[450px] shadow-[5px_10px_10px_5px_#29292A12] pl-16 pt-10 pr-8 pb-[14px] relative rounded-[8px] ">
+                        <img src="./assets//customersLogo2.svg" alt="">
+                        <!-- <div class="flex items-start gap-3"> -->
+                            <p class="pt-4 pb-6 leading-8 max-w-[350px]">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut 
+                                aliquam, purus sit amet luctus venenatis, lectus magna fringilla 
+                                urna, porttitor rhoncus dolor purus non enim praesent elem
+                                </p>
+                                <img class="absolute top-[34%] left-8" src="./assets/Quote Mark.svg" alt="">
+                            <!-- </div> -->
+                            <strong class="block text-[#18191F] text-[18px]">Jane Cooper</strong>
+                            <span class="text-[14px] font-[500] text-[#969BAB]">CEO, JPNL</span>
+                        </div>
+                        <div data-aos="flip-down" class="w-[350px] shadow-[5px_10px_10px_5px_#29292A12] pl-16 pt-10 pr-8 pb-[32px] relative rounded-[8px] ">
+                            <img src="./assets//customersLogo3.svg" alt="">
+                            <!-- <div class="flex items-start gap-3"> -->
+                                <p class="pt-4 pb-6 leading-8 max-w-[254px]">
+                                    LemonWares saved our time in Hosting my company page.
+                                </p>
+                                <img class="absolute top-[42%] left-8" src="./assets/Quote Mark.svg" alt="">
+                            <!-- </div> -->
+                            <strong class="block text-[#18191F] text-[18px]">Kristin Watson</strong>
+                            <span class="text-[14px] font-[500] text-[#969BAB]">Co-Founder, LeeveOn Branding</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div id="view-2" class="contentView w-full items-center justify-between">
-                    <div class="w-[50%]">
-                        <h2 class="text-[64px] font-bold max-w-[80%] leading-[78px]">Premium Web Domain for Your Website</h2>
-                        <p class="text-[16px] text-[#808080] max-w-[46%] pt-[30px] pb-[60px]">Blazing fast web domain for individuals and businesses of all sizes backed by 24x7x365 Support.</p>
-                        <div class="flex gap-6">
-                            <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Create an Account</button>
-                            <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Choose your plan</button>
-                        </div>
+                <div data-aos="fade-up" class="w-full flex justify-between items-center py-21">
+                    <div class="w-[440px]" >
+                        <h2 class="text-[48px] font-bold text-[#18191F]">We serve over 100 Nigerian Websites</h2>
+                        <p class="text-[18px] text-[#18191F]">Connect LemonWares with your favourite tools that you use daily and keep things on track.</p>
                     </div>
-                    <div class="w-[43%] h-[504px]">
-                        <img class="w-full h-full" src="./assets/topContent.png" alt="">
-                    </div>
-                </div>
-
-                <div id="view-3" class="contentView w-full items-center justify-between ">
-                    <div class="w-[50%]">
-                        <h2 class="text-[64px] font-bold max-w-[80%] leading-[78px]">Premium Web SEO for Your Website</h2>
-                        <p class="text-[16px] text-[#808080] max-w-[46%] pt-[30px] pb-[60px]">Blazing fast web seo for individuals and businesses of all sizes backed by 24x7x365 Support.</p>
-                        <div class="flex gap-6">
-                            <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Create an Account</button>
-                            <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Choose your plan</button>
-                        </div>
-                    </div>
-                    <div class="w-[43%] h-[504px]">
-                        <img class="w-full h-full" src="./assets/topContent.png" alt="">
+                    <div class="w-[490px] flex flex-wrap gap-[65px]">
+                        <a href="#"><img src="./assets/customersb1.png" alt=""></a>
+                        <a href="#"><img src="./assets/customersb2.png" alt=""></a>
+                        <a href="#"><img src="./assets/customersb3.png" alt=""></a>
+                        <a href="#"><img src="./assets/customersb4.png" alt=""></a>
+                        <a href="#"><img src="./assets/customersb5.png" alt=""></a>
+                        <a href="#"><img src="./assets/customersb6.png" alt=""></a>
                     </div>
                 </div>
-
-                <div id="view-4" class="contentView w-full items-center justify-between ">
-                    <div class="w-[50%]">
-                        <h2 class="text-[64px] font-bold max-w-[80%] leading-[78px]">Premium Web Email for Your Website</h2>
-                        <p class="text-[16px] text-[#808080] max-w-[46%] pt-[30px] pb-[60px]">Blazing fast web email for individuals and businesses of all sizes backed by 24x7x365 Support.</p>
-                        <div class="flex gap-6">
-                            <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Create an Account</button>
-                            <button class="w-40 h-12 rounded-[8px] bg-[#B00000] text-white duration-300 hover:border hover:border-solid hover:bg-transparent border-black hover:text-black">Choose your plan</button>
-                        </div>
-                    </div>
-                    <div class="w-[43%] h-[504px]">
-                        <img class="w-full h-full" src="./assets/topContent.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container w-full flex flex-col">
-            <div class="flex flex-col gap-24">
-                <div class="flex items-center">
-                    <div class="w-1/2 flex flex-col gap-5">
-                        <h4 class="text-[48px] font-bold text-black">True Cloud Web  Hosting</h4>
-                        <p class="text-[18px] leading-8 max-w-[85%] text-black">
-                            True Cloud Web Hosting All of the hosting packages
-                            we offer are deployed instantly on our SSD powered 
-                            cloud. We don’t use dedicated servers that operate 
-                            on single pieces of hardware. Our entire infrastructure 
-                            is built to be reliable, secure, and scalable.
-                        </p>
-                    </div>
-                    <div id="hostingLogos" class="w-1/2 flex flex-wrap justify-between gap-10 items-center"></div>
-                </div>
-
-                <div id="hostingBuild" class="flex justify-between"></div>
-            </div>
-        </section>
-
-        <section class="container pt-[100px] w-full flex flex-col items-center">
-            <h2 class="text-[50px] font-bold max-w-1/2 text-center text-black leading-15">Ready to get started with Lemon Wares?</h2>
-            <p class="text-[25px] text-black mt-10">Choose the package that suits you</p>
-            <div class="flex flex-col items-center">
-                <div class="flex items-center gap-[25px] pt-[57px] pb-[70px]">                
-                <span class="text-[25px]">Monthly</span>
-                <button id="chackbox" class="checkBox w-[93px] h-[50px] bg-[#0005] rounded-full flex items-center px-[8px]">
-                    <span chackcircle="false" class="chackCircle"></span>
-                </button>
-                <span class="text-[25px]">Yearly</span>
-                <span class="flex items-center justify-center w-22 h-6 bg-[#FFE87A] rounded-[2px] text-black text-[10px] font-[500]">20% discount</span>
-            </div>
-            <div class="flex items-center">
-                <button startedTab="basicCon" class="startedBtn active py-[6px] w-111 bg-transparent border-b-4 border-solid border-[#c4c4c4] mb-[85px] text-[30px] font-[600] text-black">Bacik</button>
-                <button startedTab="premiumCon" class="startedBtn py-[6px] w-111 bg-transparent border-b-4 border-solid border-[#c4c4c4] mb-[85px] text-[30px] font-[600] text-black">Premium</button>
-            </div>
+                </section>
+            
+                <section data-aos="fade-up" class="container w-full pb-[110px]">
+                    <img class="w-full" src="./assets/CTA.jpg" alt="">
+                </section>
+            </main>
+        
+        <footer class="bg-[#B00000] py-20">
+            <div class="container flex flex-col gap-24">
+                <div class="flex justify-between">
             <div>
-                <div id="basicCon" class="startedCon active"></div>
-                <div id="premiumCon" class="startedCon"></div>
+                <img src="./assets/footerLogo.png" alt="logo">
+                <p class="max-w-[296px] text-[#E6E6E6] mt-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit ut 
+                    aliquam, purus sit amet luctus venenatis, lectus magna fringilla 
+                    urna, porttitor rhoncus dolor purus non enim praesent elem
+                </p>
             </div>
+            <div class="flex flex-col gap-6">
+                <strong class="text-white">Service</strong>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline" href="#">Domain</a>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline" href="#">Shared Hosting</a>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline" href="#">Cloud Hosting</a>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline" href="#">Private Hosting</a>
             </div>
-        </section>
-
-       <section class="w-full flex gap-[30px]">
-           <div class="w-full flex flex-col items-end">
-              <div class="w-[55%]">
-                <h2 class="text-[48px] font-bold">Real Stories from Real Customers</h2>
-                <p class="text-[18px]">Get inspired by these stories.</p>
-              </div>
-              <div class="w-[50%] border border-solid border-black">
-                <img src="./assets/customersLogo2.svg" alt="">
-                  <p class="max-w-[80%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elem</p>
-                  <strong>Floyd Miles</strong>
-                  <p>Vice President, CLI</p>
-              </div>
-           </div>
-           <div class="customersCol2 w-full">
-            <div class="w-[50%] border border-solid border-black">
-                <img src="./assets/customersLogo2.svg" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, corporis? Nesciunt repudiandae accusamus ratione numquam? Molestias perferendis ad, eligendi, unde numquam vero, quae culpa architecto id sequi aliquid cumque. Dignissimos alias velit possimus maxime sit quisquam ex, hic incidunt facilis iste laborum illum ullam eum numquam assumenda. Fugit, quaerat eos!</p>
+            <div class="flex flex-col gap-6">
+                <strong class="text-white">Hosting</strong>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline"" href="#">Cheap Hosting</a>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline"" href="#">Hosting Wordpress</a>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline"" href="#">Email Hosting</a>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline"" href="#">Hosting Unlimited</a>
             </div>
-           </div>
-       </section>
-
+            <div class="flex flex-col gap-6">
+                <strong class="text-white">Company</strong>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline"" href="#">About</a>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline"" href="#">Career</a>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline"" href="#">Contact Us</a>
+            </div>
+            <div class="flex flex-col gap-6">
+                <strong class="text-white">Help</strong>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline"" href="#">FAQ</a>
+                <a class="text-[#E6E6E6] duration-200 hover:text-[#fff7] hover:underline"" href="#">Help support</a>
+            </div>
+        </div>
+        <p class="flex gap-1 text-white">Built by Jeremiah with <span><img src="./assets/heart.svg" alt=""></span> love in Lagos. Copyright 2021</p>
+        </div>
+       </footer>
     </div>
 
 
     <script src="./utils/localData.js"></script>
+    <script>
+        AOS.init({
+         duration: 500, 
+         once: false,  
+        });
+    </script>
 </body>
 </html>
 
