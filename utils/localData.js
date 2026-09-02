@@ -10,7 +10,55 @@ const startedCon = document.querySelectorAll('.startedCon')
 const basicCon = document.getElementById('basicCon')
 const premiumCon = document.getElementById('premiumCon')
 
-// Navigation Tabs
+const tabletMenuBtn = document.getElementById('tabletMenuesBtn')
+const tabletMenues = document.getElementById('tabletMenues')
+
+
+// Drawer Menues ///////////////////////////////////
+
+function initDrawer() {
+    const menuDrawerBtn = document.getElementById('menuDrawerBtn')
+    const drawer = document.getElementById('drawer')
+    const overlay = document.getElementById('overlay')
+    const cancelDrawer = document.getElementById('cancelDrawer')
+    const body = document.querySelector('body')
+   
+
+    function open() {
+        overlay.classList.add('active')
+        drawer.classList.add('active')
+        body.classList.add('sc')
+    }
+
+    function close() {
+        overlay.classList.remove('active')
+        drawer.classList.remove('active')
+        body.classList.remove('sc')
+    } 
+
+    drawer.addEventListener('click', (e) => e.stopPropagation())
+
+    menuDrawerBtn.addEventListener('click', open)
+    overlay.addEventListener('click', close)
+    cancelDrawer.addEventListener('click', close)
+}
+
+initDrawer();
+
+// Tablet Menues ////////////////////////////////////////
+
+tabletMenuBtn.addEventListener('click', (e) => {
+    e.stopPropagation()
+    tabletMenues.classList.toggle('active')
+})
+
+window.addEventListener('click', () => {
+    tabletMenues.classList.remove('active')
+})
+
+
+// Top Navigation Btns our Contents logic ///////////////////////////////////
+
 btns.forEach(btn => {
     btn.addEventListener('click', () => {
         btns.forEach(btn => btn.classList.remove('active'))
@@ -23,7 +71,8 @@ btns.forEach(btn => {
     })
 })
 
-// Hosting Data
+// Hosting Logos Data /////////////////////////////////////////////////////
+
 const HostingLogos = [
     { id: 1, url: './assets/webHostingLogo1.svg', name: 'cPanel' },
     { id: 2, url: './assets/webHostingLogo2.svg', name: 'immunify 360' },
@@ -32,6 +81,8 @@ const HostingLogos = [
     { id: 5, url: './assets/webHostingLogo5.svg', name: 'WordPress' },
     { id: 6, url: './assets/webHostingLogo6.svg', name: 'CLOUDFLARE' }
 ]
+
+// Hosting build data ///////////////////////////////////////////////////////
 
 const HostingBuild = [
     {
@@ -61,16 +112,17 @@ const HostingBuild = [
 ]
 
 hostingLogos.innerHTML = HostingLogos.map(logos => 
-    `<a href="#" class="w-[26%]" key="${logos.id}">
+    `<a href="#" class="w-[22%]" key="${logos.id}">
         <img class="w-full h-full object-contain" src="${logos.url}" alt="${logos.name}" />
     </a>`
 ).join('')
 
 hostingBuild.innerHTML = HostingBuild.map(build => 
-    `<div class="w-1/5 flex flex-col items-center gap-3" key="${build.id}">
-        <img class="w-25 h-25" src="${build.url}" />
-        <h5 class="text-[20px] font-bold text-black">${build.title}</h5>
-        <p class="text-center text-[12px] text-black">${build.description}</p>
+    `<div class="w-1/5 flex flex-col items-center gap-3 max-md:w-[40%] max-md:mt-10 max-sm:w-[80%] max-sm:gap-5"
+        key="${build.id}">
+        <img class="w-25 h-25 max-sm:w-30 max-sm:h-30" src="${build.url}" />
+        <h5 class="text-[20px] font-bold text-black max-sm:text-[24px] max-sm:max-w-full">${build.title}</h5>
+        <p class="text-center text-[12px] max-sm:text-[16px] text-black max-md:max-w-[80%]">${build.description}</p>
     </div>`
 ).join('')
 
@@ -178,15 +230,15 @@ function RenderPlans() {
     }
 
     basicCon.innerHTML = StartedBasic.map(strt => 
-        `<div key="${strt.id}" class="w-[300px] px-[30px] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px]">
-            <h5 class="text-[28px] font-[600]">${strt.title}</h5>
-            <p class="max-w-[85%] mt-1 mb-3 text-[12px]">${strt.description}</p>
-            <strong class="text-[42px] font-bold">$${calculatePrice(strt.price)}</strong>
+        `<div key="${strt.id}" class="w-[300px] px-[30px] max-sm:px-[26px] max-sm:py-[16px] max-sm:w-[94%] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px] max-md:shrink-0">
+            <h5 class="text-[28px] max-sm:text-[25px] font-[600]">${strt.title}</h5>
+            <p class="max-w-[85%] max-sm:max-w-full mt-1 mb-3 text-[12px]">${strt.description}</p>
+            <strong class="text-[42px] max-sm:text-[36px] font-bold">$${calculatePrice(strt.price)}</strong>
             <p class="text-[12px]">${isYearly ? 'Per year (20% discount)' : 'Per month'}</p>
-            <button class="w-full h-[50px] border-2 border-solid border-black mx-auto rounded-[12px] text-[14px] font-medium my-[35px] hover:bg-black hover:text-white duration-300">
+            <button class="w-full h-[50px] border-2 border-solid border-black mx-auto rounded-[12px] text-[14px] font-medium my-[35px] max-sm:my-[20px] hover:bg-black hover:text-white duration-300">
                 Choose this plan
             </button>
-            <div class="flex flex-col gap-[15px]">
+            <div class="flex flex-col gap-[15px] max-sm:gap-[10px]">
                 <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.ssd}</span></div>
                 <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.bandwidth}</span></div>
                 <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${strt.advance.accounts}</span></div>
@@ -201,15 +253,15 @@ function RenderPlans() {
     ).join('')
 
     premiumCon.innerHTML = StartedPremium.map(pr => 
-        `<div key="${pr.id}" class="w-[300px] px-[30px] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px]">
-            <h5 class="text-[28px] font-[600]">${pr.title}</h5>
-            <p class="max-w-[85%] mt-1 mb-3 text-[12px]">${pr.description}</p>
-            <strong class="text-[42px] font-bold">$${calculatePrice(pr.price)}</strong>
+        `<div key="${pr.id}" class="w-[300px] max-sm:w-[94%] max-sm:px-[26px] max-sm:py-[16px] px-[30px] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px] shrink-0">
+            <h5 class="text-[28px] max-sm:text-[25px] font-[600]">${pr.title}</h5>
+            <p class="max-w-[85%] max-sm:max-w-full mt-1 mb-3 text-[12px]">${pr.description}</p>
+            <strong class="text-[42px] max-sm:text-[36px] font-bold">$${calculatePrice(pr.price)}</strong>
             <p class="text-[12px]">${isYearly ? 'Per year(20% discount)' : 'Per month'}</p>
-            <button class="w-full h-[50px] border-2 border-solid border-black mx-auto rounded-[12px] text-[14px] font-medium my-[35px] hover:bg-black hover:text-white duration-300">
+            <button class="w-full h-[50px] border-2 border-solid border-black mx-auto rounded-[12px] text-[14px] font-medium my-[35px] max-sm:my-[20px] hover:bg-black hover:text-white duration-300">
                 Choose this plan
             </button>
-            <div class="flex flex-col gap-[15px]">
+            <div class="flex flex-col gap-[15px] max-sm:gap-[10px]">
                 <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.ssd}</span></div>
                 <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.bandwidth}</span></div>
                 <div class="flex gap-6 w-full"><img src="./assets/Checkmark.svg" /> <span class="text-[16px] font-bold text-[#808080]">${pr.advance.accounts}</span></div>
