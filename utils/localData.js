@@ -230,7 +230,7 @@ function RenderPlans() {
     }
 
     basicCon.innerHTML = StartedBasic.map(strt => 
-        `<div key="${strt.id}" class="w-[300px] px-[30px] max-sm:px-[26px] max-sm:py-[16px] max-sm:w-[94%] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px] max-md:shrink-0">
+        `<div key="${strt.id}" class="w-[300px] px-[30px] max-sm:px-[26px] max-sm:py-[16px] max-sm:w-[94%] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px] max-sm:rounded-[20px] max-md:shrink-0">
             <h5 class="text-[28px] max-sm:text-[25px] font-[600]">${strt.title}</h5>
             <p class="max-w-[85%] max-sm:max-w-full mt-1 mb-3 text-[12px]">${strt.description}</p>
             <strong class="text-[42px] max-sm:text-[36px] font-bold">$${calculatePrice(strt.price)}</strong>
@@ -253,7 +253,7 @@ function RenderPlans() {
     ).join('')
 
     premiumCon.innerHTML = StartedPremium.map(pr => 
-        `<div key="${pr.id}" class="w-[300px] max-sm:w-[94%] max-sm:px-[26px] max-sm:py-[16px] px-[30px] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px] shrink-0">
+        `<div key="${pr.id}" class="w-[300px] max-sm:w-[94%] max-sm:px-[26px] max-sm:py-[16px] px-[30px] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px] max-sm:rounded-[20px] shrink-0">
             <h5 class="text-[28px] max-sm:text-[25px] font-[600]">${pr.title}</h5>
             <p class="max-w-[85%] max-sm:max-w-full mt-1 mb-3 text-[12px]">${pr.description}</p>
             <strong class="text-[42px] max-sm:text-[36px] font-bold">$${calculatePrice(pr.price)}</strong>
