@@ -960,6 +960,9 @@
   .active\:bg-transparent:active {
     background-color: transparent;
   }
+  .active\:text-\[\#b00000\]:active {
+    color: #b00000;
+  }
   .active\:text-black:active {
     color: var(--color-black);
   }
