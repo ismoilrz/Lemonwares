@@ -28,6 +28,11 @@ button {
     border-radius: 10px;
 }
 
+::selection {
+  background-color: #B00000; 
+  color: #ffffff;        
+}
+
 .container {
     width: 100%;
     max-width: 1300px;
