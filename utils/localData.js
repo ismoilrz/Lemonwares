@@ -121,7 +121,7 @@ hostingBuild.innerHTML = HostingBuild.map(build =>
     `<div class="w-1/5 flex flex-col items-center gap-3 max-md:w-[40%] max-md:mt-10 max-sm:w-[80%] max-sm:gap-5"
         key="${build.id}">
         <img class="w-25 h-25 max-sm:w-30 max-sm:h-30" src="${build.url}" />
-        <h5 class="text-[20px] font-bold text-black max-sm:text-[24px] max-sm:max-w-full">${build.title}</h5>
+        <h5 class="text-[20px] font-bold text-black text-center max-sm:text-[24px] max-sm:max-w-full">${build.title}</h5>
         <p class="text-center text-[12px] max-sm:text-[16px] text-black max-md:max-w-[80%]">${build.description}</p>
     </div>`
 ).join('')
