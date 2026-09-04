@@ -9,9 +9,10 @@
 </head>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <body>
-    <div class="pt-10 max-sm:pt-6">
-        <header class="container w-full flex items-center justify-between max-md:justify-evenly">
-            <div class="flex w-[55%] justify-between items-center max-md:w-[30%]">
+    <div class="pt-5 max-sm:pt-2">
+        <header class="sticky top-0 left-0 z-40 bg-white w-full pt-5 max-sm:!pt-2 flex items-center justify-between max-md:justify-evenly">
+            <div class="container flex justify-between items-center max-md:justify-evenly">
+                <div class="flex w-[55%] justify-between items-center max-md:w-[30%]">
                 <div class="flex items-center w-[35%] justify-between max-md:w-full">
                     <div class="w-[90px] max-sm:w-20 max-sm:h-13 h-15"><img class="w-full h-full" src="./assets/Logo.png" alt=""></div>
                     <a class="text-[15px] max-sm:hidden font-semibold border-b-2 border-solid border-transparent duration-300 hover:border-[#B00000]" href="">Our Services</a>
@@ -47,6 +48,7 @@
                         <span class="w-[70%] h-1 bg-[#b00000] rounded-l-full"></span>
                     </button>
                 </div>
+            </div>
             </div>
         </header>
         <main>
@@ -227,8 +229,14 @@
                 </div>
                 </section>
             
-                <section data-aos="fade-up" class="container w-full pb-[110px] max-md:pb-20">
-                    <img class="w-full" src="./assets/CTA.jpg" alt="">
+                <section data-aos="fade-up" class="container relative w-full h-auto mb-[110px] max-md:pb-20 max-sm:mb-0 flex justify-center">
+                    <div class="flex items-center justify-center flex-col bg-[#F7FAFE] rounded-[18px] py-[80px] w-full h-full max-md:w-[90%]">
+                        <h2 class="text-[64px] max-md:text-[58px] max-sm:text-[50px] max-sm:leading-[64px] max-w-[70%] max-md:max-w-[90%] text-center font-semibold leading-[88px] mb-20">We're here to make your website awesome.</h2>
+                    <button class="flex items-center gap-2 px-4 py-3 bg-[#b00000] rounded-[8px] text-sm text-white"><img src="./assets/whatsapp.svg" alt=""> Get in touch with us</button>
+                    </div>
+                    <img class="absolute top-0 left-[36%]" src="./assets/Elements.svg" alt="">
+                    <img class="absolute bottom-[10%] right-[-2%] max-md:top-[50%] max-md:right-[3%] w-[72px] h-[72px]" src="./assets/Elements.svg" alt="">
+                    <img class="absolute bottom-[15%] left-[-1%] max-md:bottom-[20%] max-md:left-[4%]" src="./assets/Elementrs.svg" alt="">
                 </section>
             </main>
         
