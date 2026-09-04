@@ -17,6 +17,8 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -302,6 +304,9 @@
   .hidden {
     display: none;
   }
+  .table {
+    display: table;
+  }
   .h-1 {
     height: var(--spacing);
   }
@@ -343,6 +348,9 @@
   }
   .h-full {
     height: 100%;
+  }
+  .w-1 {
+    width: var(--spacing);
   }
   .w-1\/2 {
     width: calc(1 / 2 * 100%);
@@ -422,6 +430,9 @@
   .w-full {
     width: 100%;
   }
+  .max-w-1 {
+    max-width: var(--spacing);
+  }
   .max-w-1\/2 {
     max-width: calc(1 / 2 * 100%);
   }
@@ -449,14 +460,23 @@
   .max-w-\[350px\] {
     max-width: 350px;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .shrink-0 {
     flex-shrink: 0;
+  }
+  .border-collapse {
+    border-collapse: collapse;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -586,11 +606,20 @@
   .border-\[\#DAD8D8\] {
     border-color: #DAD8D8;
   }
+  .border-\[\#\] {
+    border-color: #;
+  }
+  .border-\[\#b00000\] {
+    border-color: #b00000;
+  }
   .border-\[\#c4c4c4\] {
     border-color: #c4c4c4;
   }
   .border-\[\#fff\] {
     border-color: #fff;
+  }
+  .border-\[\@\] {
+    border-color: @;
   }
   .border-black {
     border-color: var(--color-black);
@@ -822,6 +851,9 @@
   .italic {
     font-style: italic;
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .shadow-\[1px_1px_30px\] {
     --tw-shadow: 1px 1px 30px var(--tw-shadow-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -846,6 +878,19 @@
       --tw-shadow-color: color-mix(in oklab, #b0000064 var(--tw-shadow-alpha), transparent);
     }
   }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .backdrop-filter {
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .duration-200 {
     --tw-duration: 200ms;
     transition-duration: 200ms;
@@ -859,12 +904,19 @@
       border-style: var(--tw-border-style);
       border-width: 1px;
     }
+    .hover\:border-2:hover {
+      border-style: var(--tw-border-style);
+      border-width: 2px;
+    }
     .hover\:border-solid:hover {
       --tw-border-style: solid;
       border-style: solid;
     }
     .hover\:border-\[\#B00000\]:hover {
       border-color: #B00000;
+    }
+    .hover\:border-\[\#b00000\]:hover {
+      border-color: #b00000;
     }
     .hover\:bg-black:hover {
       background-color: var(--color-black);
@@ -875,8 +927,17 @@
     .hover\:text-\[\#B00000\]:hover {
       color: #B00000;
     }
+    .hover\:text-\[\#b00000\]:hover {
+      color: #b00000;
+    }
+    .hover\:text-\[\#b\]:hover {
+      color: #b;
+    }
     .hover\:text-\[\#fff7\]:hover {
       color: #fff7;
+    }
+    .hover\:text-\[\$\]:hover {
+      color: $;
     }
     .hover\:text-black:hover {
       color: var(--color-black);
@@ -1245,6 +1306,7 @@
 }
 body {
   position: relative;
+  font-family: 'Inter';
 }
 body.sc {
   overflow-y: hidden;
@@ -1506,6 +1568,47 @@ button {
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -1535,6 +1638,16 @@ button {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
       --tw-duration: initial;
     }
   }

@@ -125,7 +125,11 @@ hostingBuild.innerHTML = HostingBuild.map(build =>
         <p class="text-center text-[12px] max-sm:text-[16px] text-black max-md:max-w-[80%]">${build.description}</p>
     </div>`
 ).join('')
+//--------------------------------------------------------------------------------------
 
+
+///// Started //////////////////////////////////////////////////////////
+// started data
 const StartedBasic = [
     {
         id: 1,
@@ -217,18 +221,20 @@ const StartedPremium = [
     }
 ]
 
+// Yearly monthly
 let isYearly = false
 
 function RenderPlans() {
     const calculatePrice = (monthlyPrice) => {
         if (isYearly) {
             const fullYearPrice = monthlyPrice * 12
-            const discountedYearlyPrice = fullYearPrice * 0.8
+            const discountedYearlyPrice = fullYearPrice * 0.8 //discount new dec
             return discountedYearlyPrice.toFixed(2)
         }
         return monthlyPrice.toFixed(2)
     }
 
+    //started content
     basicCon.innerHTML = StartedBasic.map(strt => 
         `<div key="${strt.id}" class="w-[300px] px-[30px] max-sm:px-[26px] max-sm:py-[16px] max-sm:w-[94%] py-[20px] border-2 border-solid border-[#C4C4C4] rounded-[15px] max-sm:rounded-[20px] max-md:shrink-0">
             <h5 class="text-[28px] max-sm:text-[25px] font-[600]">${strt.title}</h5>
@@ -298,3 +304,4 @@ startedBtn.forEach(btn => {
 })
 
 RenderPlans()
+//------------------------------------------------------------------------------

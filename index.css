@@ -3,7 +3,7 @@
 
 body {
     position: relative;
-    /* overflow-x: hidden; */
+    font-family: 'Inter';
 }
 
 body.sc {
@@ -34,6 +34,8 @@ button {
     margin-inline: auto;
 }
 
+
+/*-------------------- Drawer menues mobile ---------------------- */
 .overlay {
     position: absolute;
     width: 100%;
@@ -66,22 +68,17 @@ button {
 .drawer.active {
     right: 0;
 }
+/* ------------------------------------------------------------- */
 
 
-/* @media (max-width: 640px) {
-    #drawer {
-        display: flex;
-    }
-} */
-
-
-
-
-
+/* ---------- modal menues tablet ------------- */
 #tabletMenues.active {
   display: flex !important;
 }
+/* --------------------------------------------- */
 
+
+/* ----------------- Started -------------------- */
 .contentView {
     display: none;
     transition: 0.3s;
@@ -135,7 +132,6 @@ button {
     transform: translateX(43px);
 }
 
-/* Started Section */
 .startedCon {
     padding-bottom: 10px;
     display: none;
