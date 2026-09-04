@@ -2,7 +2,8 @@
 
 
 body {
-    overflow-x: hidden;
+    position: relative;
+    /* overflow-x: hidden; */
 }
 
 body.sc {
@@ -34,11 +35,11 @@ button {
 }
 
 .overlay {
+    position: absolute;
     width: 100%;
     height: 100%;
     background-color: #0003;
     backdrop-filter: blur(5px);
-    position: absolute;
     top: 0;
     left: 0;
     z-index: 99;
@@ -55,8 +56,8 @@ button {
     top: 0;
     right: -70%;
     height: 100%;
-    border-left: 3px solid #fff;
     width: 70%;
+    border-left: 3px solid #fff;
     background-color: #B00000;
     z-index: 100;
     transition: 0.2s ease-out;
