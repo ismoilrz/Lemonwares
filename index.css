@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
+*{
+    font-family: "Inter";
+}
 
 body {
     position: relative;
-    font-family: 'Inter';
 }
 
 body.sc {
